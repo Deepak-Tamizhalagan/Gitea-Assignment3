@@ -1,0 +1,9 @@
+---
+- import_playbook: k8s/up.yml
+- import_playbook: gitea/up.yml
+- hosts: localhost
+  tasks:
+  - name: create ingress
+    kubernetes.core.k8s:
+      state: present
+      src: ./gitea/ingress.yml
