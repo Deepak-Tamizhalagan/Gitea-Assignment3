@@ -18,13 +18,13 @@ spec:
         image: mysql:8.0
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: root123
+          value: <set-your-own-root-password> # used internally by MySQL
         - name: MYSQL_DATABASE
           value: gitea
         - name: MYSQL_USER
           value: gitea
         - name: MYSQL_PASSWORD
-          value: gitea123
+          value: <set-your-own-db-password>  # must match Gitea's PASSWD in values.yaml
         ports:
         - containerPort: 3306
         volumeMounts:
